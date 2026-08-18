@@ -2,6 +2,8 @@
 
 A Laravel and Livewire dispatch management application for assigning drivers, managing trip status, updating pending-trip fares, and recording operational audit history.
 
+> Documentation note: the wording, formatting, and clarity of this README were refined with AI assistance to improve readability and professionalism. The underlying implementation and business logic were developed independently.
+
 ## Technology Stack
 
 - PHP 8.2 or later

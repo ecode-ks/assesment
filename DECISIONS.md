@@ -1,5 +1,7 @@
 # Technical Decisions
 
+> Documentation note: the structure and wording of this document were refined with AI assistance to improve clarity and professionalism. The technical decisions themselves reflect the independently developed implementation and system architecture.
+
 ## 1. Livewire, Service, and Repository Boundaries
 
 The application uses a `Livewire -> Service -> Repository` structure. The Livewire component manages user input, component state, and presentation errors. Services contain authorization, transactions, and business rules. `TripRepository` owns Eloquent queries and persistence for trips, drivers, status history, activity logs, and dashboard reads.
