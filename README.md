@@ -41,6 +41,23 @@ DB_CONNECTION=sqlite
 DB_DATABASE=database/database.sqlite
 ```
 
+## Migrations and Seed Data
+
+The setup command `php artisan migrate --seed` runs all database migrations, including the dispatch-query indexes, and then executes `DatabaseSeeder`.
+
+The seed data provides:
+
+- Three local roles: dispatcher, supervisor, and administrator.
+- Sixty drivers in `available`, `assigned`, and `offline` states.
+- A representative trip queue across all supported trip statuses.
+- Initial trip status-history records for seeded trips.
+
+To recreate the local database from scratch, use:
+
+```powershell
+php artisan migrate:fresh --seed
+```
+
 ## Start the Application
 
 Open two PowerShell terminals in the project root.
@@ -79,12 +96,6 @@ Run only the dispatch lifecycle feature tests:
 php artisan test tests/Feature/TripAssignmentLifecycleTest.php
 ```
 
-Reset the local database and load seed data when needed:
-
-```powershell
-php artisan migrate:fresh --seed
-```
-
 ## Completed Scope
 
 - Driver assignment and supervisor-only driver reassignment.
@@ -112,6 +123,10 @@ php artisan migrate:fresh --seed
 - Updates are request-driven; the board does not use WebSockets, broadcasts, or automatic multi-user refresh.
 - Pagination uses a manual page property rather than Livewire's built-in pagination trait.
 - Audit records capture operational changes but do not provide a separate reporting or export interface.
+
+## Unfinished Items
+
+There are no unfinished items within the assessment scope. The items listed in **Known Limitations** are intentional scope boundaries rather than incomplete implementations.
 
 ## Useful Commands
 
